@@ -36,6 +36,7 @@ public class CategoryController {
 
     /**
      * 新增分类
+     * @param categoryDTO
      * @return
      */
     @ApiOperation("新增分类")
@@ -43,6 +44,19 @@ public class CategoryController {
     public Result save(@RequestBody CategoryDTO categoryDTO) {
         log.info("新增分类，{}", categoryDTO);
         categoryService.save(categoryDTO);
+        return Result.success();
+    }
+
+    /**
+     * 启用、禁用分类
+     * @param id
+     * @param status
+     * @return
+     */
+    @ApiOperation("启用、禁用分类")
+    @PostMapping("/status/{status}")
+    public Result startOrStop(Long id, @PathVariable Integer status) {
+        categoryService.startOrStop(id, status);
         return Result.success();
     }
 }

@@ -20,4 +20,10 @@ public interface CategoryMapper {
      * @param category
      */
     void insert(Category category);
+
+    /**
+     * 根据主键动态修改属性
+     * @param category
+     */
+    void update(Category category);
 }
