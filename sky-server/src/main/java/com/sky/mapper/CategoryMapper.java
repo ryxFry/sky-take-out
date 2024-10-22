@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface CategoryMapper {
@@ -26,4 +27,11 @@ public interface CategoryMapper {
      * @param category
      */
     void update(Category category);
+
+    /**
+     * 根据id删除分类
+     * @param id
+     */
+    @Select("delete from category where id = #{id};")
+    void deleteById(Long id);
 }

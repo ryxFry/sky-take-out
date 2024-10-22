@@ -72,4 +72,11 @@ public class CategoryController {
         categoryService.update(categoryDTO);
         return Result.success();
     }
+
+    @ApiOperation("根据id删除分类")
+    @DeleteMapping
+    public Result deleteById(Long id) {
+        categoryService.deleteById(id);
+        return Result.success();
+    }
 }
