@@ -73,6 +73,11 @@ public class CategoryController {
         return Result.success();
     }
 
+    /**
+     * 根据id删除分类
+     * @param id
+     * @return
+     */
     @ApiOperation("根据id删除分类")
     @DeleteMapping
     public Result deleteById(Long id) {

@@ -131,6 +131,7 @@ public class EmployeeController {
     @PutMapping
     public Result update(@RequestBody EmployeeDTO employeeDTO) {
         log.info(employeeDTO.toString());
+        employeeService.update(employeeDTO);
         return Result.success();
     }
 
